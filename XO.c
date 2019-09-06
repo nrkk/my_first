@@ -22,25 +22,23 @@ int main()
 						if(i==r && j==c)
 						{
 							a[i][j]='X';
-							//printf("%c\t",a[i][j]);
+							
 						}
-						//else
-						//printf("\t");	
+						
 					}
-					//printf("\n");
+					
 				}
 			
 			for(i=0;i<3;i++)
 				{
 					for(j=0;j<3;j++)
 					{
-						//if(i==r && j==c)
+						
 						{
-							//a[i][j]='X';
+							
 							printf("%c\t",a[i][j]);
 						}
-						//else
-						//printf("\t");	
+						
 					}
 					printf("\n");
 				}
@@ -76,12 +74,11 @@ int main()
 						if(i==r && j==c)
 						{
 							a[i][j]='O';
-							//printf("%c\t",a[i][j]);
+							
 						}
-						//else
-						//printf("\t");	
+						
 					}
-					//printf("\n");
+					
 				}
 
 
@@ -90,13 +87,12 @@ int main()
 				{
 					for(j=0;j<3;j++)
 					{
-						//if(i==r && j==c)
+						
 						{
-							//a[i][j]='X';
+							
 							printf("%c\t",a[i][j]);
 						}
-						//else
-						//printf("\t");	
+							
 					}
 					printf("\n");
 				}
