@@ -1,5 +1,0 @@
-Template repository
-
-Template repositories let users generate new repositories with the same directory structure and files. Indicate if nrkk/my_first can be used as a template for creating other repositories.
-
-
