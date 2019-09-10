@@ -23,6 +23,7 @@ insert_end (struct Node **head, int new_data)
   while (last->next != NULL)
     last = last->next;
   last->next = new_node;
+//free(new_node);
   return;
 }
 
@@ -33,7 +34,8 @@ insert_begin (struct Node **head, int new_data)
   new_node->data = new_data;
   new_node->next = *head;
   *head = new_node;
-
+//free(new_node);
+return;
 }
 
 void
@@ -50,7 +52,9 @@ insert_after (struct Node **head, int new_data, int pos)
     }
   new_node->next = prev->next;
   prev->next = new_node;
-
+//free(new_node);
+//free(prev);
+return;
 }
 
 
@@ -68,6 +72,9 @@ temp=temp->next;
 }
 prev->next=temp->next;
 temp->next=NULL;
+free(temp);
+//free(prev);
+return;
 }
 
 void delete_position(struct Node **head,int pos)
@@ -81,6 +88,7 @@ if(pos==1)
 temp=temp->next;
 
 *head=temp;
+free(temp);
 }
 else
 {
@@ -91,7 +99,10 @@ while (--pos)
     }
 prev->next=temp->next;
 temp->next=NULL;
+free(temp);
+//free(prev);
 }
+return;
 }
 
 void
@@ -104,6 +115,22 @@ printf("OUTPUT:");
       node = node->next;
     }
 printf("\n");
+return;
+}
+
+void print_rec(struct Node *node)
+{
+
+if(node==NULL)
+return;
+else
+{
+printf("%d ",node->data);
+node=node->next;
+print_rec(node);	
+}
+return;
+
 }
 
 void
@@ -115,7 +142,7 @@ main ()
 
 while(1)
 {
-printf ("1.insert at end:\n2.insert at beginning\n3.insert after position\n4.print\n5.delete a number\n6.delete at position\n7.exit\nEnter your choice:\n");
+printf ("1.insert at end:\n2.insert at beginning\n3.insert after position\n4.print\n5.delete a number\n6.delete at position\n7.Recursive print\n8.exit\nEnter your choice:\n");
 scanf("%d",&ch);
 
 switch(ch)
@@ -149,6 +176,11 @@ case 6:
 	delete_position(&head,pos);
 	break;
 case 7:
+	printf("OUTPUT IN RECURSION:");
+	print_rec(head);
+	printf("\n");
+	break;
+case 8:
 	exit(1);
 }
 }
