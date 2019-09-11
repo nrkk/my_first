@@ -80,30 +80,26 @@ struct node *last = NULL;
 int n, pos,ch;
 while(1)
 {
-printf ("1.insert empty:\n2.insert begin\n3.insert end\n4.print\n5.exit\nEnter your choice:\n");
+printf ("1.insert begin\n2.insert end\n3.print\n4.exit\nEnter your choice:\n");
 scanf("%d",&ch);
 
 switch(ch)
 {
-case 1:printf ("enter the numbers to insert :");
-scanf ("%d", &n);
-last=add_empty(last, n);
-break;
-case 2:
+case 1:
 printf ("enter the numbers to insert at beginning :");
 scanf ("%d", &n);
 last=add_start(last,n);
 
 break;
-case 3:
+case 2:
 printf ("enter the numbers to insert at end :");
 scanf ("%d", &n);
 last=add_end(last,n);
 break;
-case 4:
+case 3:
 printlist(last);
 break;
-case 5:
+case 4:
 exit(1);
 }
 }
