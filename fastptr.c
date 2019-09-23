@@ -30,7 +30,7 @@ void mid(struct Node *head)
 struct Node *fptr=head;
 struct Node *sptr=head;
 
-while(fptr->next!=NULL && fptr!=NULL)
+while(fptr->next!=NULL && fptr->next->next!=NULL)
 {
 sptr=sptr->next;
 fptr=fptr->next->next;
